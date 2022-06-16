@@ -20,7 +20,6 @@ export default class App extends React.Component {
   };
 
   render() {
-    console.log(this.state);
     return (
       <section>
         <header>Cv Project</header>
@@ -28,67 +27,67 @@ export default class App extends React.Component {
           <h3></h3>
           <input
             type="text"
-            placeholder="firstName"
+            placeholder="First name"
             name="firstName"
             onChange={this.handleChange}
           ></input>
           <input
             type="text"
-            placeholder="lastName"
+            placeholder="Last name"
             name="lastName"
             onChange={this.handleChange}
           ></input>
           <input
             type="text"
-            placeholder="address"
+            placeholder="Address"
             name="address"
             onChange={this.handleChange}
           ></input>
           <input
             type="text"
-            placeholder="number"
+            placeholder="Phone number"
             name="number"
             onChange={this.handleChange}
           ></input>
           <input
             type="text"
-            placeholder="mail"
+            placeholder="Email"
             name="mail"
             onChange={this.handleChange}
           ></input>
           <input
             type="text"
-            placeholder="description"
+            placeholder="Description"
             name="description"
             onChange={this.handleChange}
           ></input>
           <input
             type="text"
-            placeholder="position"
+            placeholder="Position"
             name="position"
             onChange={this.handleChange}
           ></input>
           <input
             type="text"
-            placeholder="company"
+            placeholder="Company"
             name="company"
             onChange={this.handleChange}
           ></input>
           <input
             type="text"
-            placeholder="city"
+            placeholder="City"
             name="city"
             onChange={this.handleChange}
           ></input>
           <input
             type="text"
-            placeholder="university"
+            placeholder="University"
             name="university"
             onChange={this.handleChange}
           ></input>
           <input
             type="text"
-            placeholder="degree"
+            placeholder="Degree"
             name="degree"
             onChange={this.handleChange}
           ></input>
