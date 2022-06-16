@@ -1,6 +1,19 @@
 import React from "react";
 
 export default class Personal extends React.Component {
+  state = {
+    firstName: "",
+    lastName: "",
+    address: "",
+    number: "",
+    mail: "",
+    description: "",
+  };
+
+  handle = (e) => {
+    this.setState({ [e.target.name]: e.target.value });
+  };
+
   render() {
     console.log(this.props);
     return (
@@ -10,43 +23,43 @@ export default class Personal extends React.Component {
           type="text"
           placeholder="First name"
           name="firstName"
-          onChange={this.props.handle}
-          value={this.props.state.firstName}
+          onChange={this.handle}
+          value={this.state.firstName}
         ></input>
         <input
           type="text"
           placeholder="Last name"
           name="lastName"
-          onChange={this.props.handle}
-          value={this.props.state.lastName}
+          onChange={this.handle}
+          value={this.state.lastName}
         ></input>
         <input
           type="text"
           placeholder="Address"
           name="address"
-          onChange={this.props.handle}
-          value={this.props.state.address}
+          onChange={this.handle}
+          value={this.state.address}
         ></input>
         <input
           type="text"
           placeholder="Phone number"
           name="number"
-          onChange={this.props.handle}
-          value={this.props.state.number}
+          onChange={this.handle}
+          value={this.state.number}
         ></input>
         <input
           type="text"
           placeholder="Email"
           name="mail"
-          onChange={this.props.handle}
-          value={this.props.state.mail}
+          onChange={this.handle}
+          value={this.statemail}
         ></input>
         <input
           type="text"
           placeholder="Description"
           name="description"
-          onChange={this.props.handle}
-          value={this.props.state.description}
+          onChange={this.handle}
+          value={this.state.description}
         ></input>
       </form>
     );

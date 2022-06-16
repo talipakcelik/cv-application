@@ -1,6 +1,14 @@
 import React from "react";
 
 export default class Education extends React.Component {
+  state = {
+    university: "",
+    degree: "",
+  };
+
+  handle = (e) => {
+    this.setState({ [e.target.name]: e.target.value });
+  };
   render() {
     return (
       <form>
@@ -9,15 +17,15 @@ export default class Education extends React.Component {
           type="text"
           placeholder="University"
           name="university"
-          onChange={this.props.handle}
-          value={this.props.state.university}
+          onChange={this.handle}
+          value={this.state.university}
         ></input>
         <input
           type="text"
           placeholder="Degree"
           name="degree"
-          onChange={this.props.handle}
-          value={this.props.state.degree}
+          onChange={this.handle}
+          value={this.state.degree}
         ></input>
       </form>
     );
