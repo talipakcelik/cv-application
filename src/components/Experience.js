@@ -5,6 +5,8 @@ export default class Experience extends React.Component {
     position: "",
     company: "",
     city: "",
+    from: "",
+    to: "",
   };
 
   handle = (e) => {
@@ -39,13 +41,31 @@ export default class Experience extends React.Component {
               onChange={this.handle}
               value={this.state.city}
             ></input>
+            <input
+              type="text"
+              placeholder="From"
+              name="from"
+              onChange={this.handle}
+              value={this.state.from}
+            ></input>{" "}
+            <input
+              type="text"
+              placeholder="To"
+              name="to"
+              onChange={this.handle}
+              value={this.state.to}
+            ></input>
           </form>
         ) : (
-          <div>
+          <div className="preview-container">
             <h3>Experience</h3>
             <p>{this.state.position}</p>
             <p>{this.state.company}</p>
             <p>{this.state.city}</p>
+            <p>
+              {this.state.from}
+              {this.state.to}
+            </p>
           </div>
         )}
       </div>
