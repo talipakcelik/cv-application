@@ -5,31 +5,36 @@ import Experience from "./components/Experience";
 
 export default class App extends React.Component {
   state = {
-    firstName: "",
-    lastName: "",
-    address: "",
-    number: "",
-    mail: "",
-    description: "",
-    position: "",
-    company: "",
-    city: "",
-    university: "",
-    degree: "",
+    selectedTab: "edit",
   };
 
-  handleChange = (e) => {
-    this.setState({ [e.target.name]: e.target.value });
+  switchTab = () => {
+    this.setState({
+      selectedTab: this.state.selectedTab === "edit" ? "preview" : "edit",
+    });
   };
 
   render() {
+    console.log(this.state);
     return (
-      <section>
-        <header>Cv Project</header>
-        <Personal state={this.state} handle={this.handleChange} />
-        <Education state={this.state} handle={this.handleChange} />
-        <Experience state={this.state} handle={this.handleChange} />
-      </section>
+      <main>
+        <header>
+          <button onClick={this.switchTab}>
+            {this.state.selectedTab === "edit" ? "Preview Mode" : "Edit Mode"}
+          </button>
+        </header>
+        <div
+          className={
+            this.state.selectedTab === "edit"
+              ? "edit-container"
+              : "preview-container"
+          }
+        >
+          <Personal state={this.state} />
+          <Education state={this.state} />
+          <Experience state={this.state} />
+        </div>
+      </main>
     );
   }
 }
